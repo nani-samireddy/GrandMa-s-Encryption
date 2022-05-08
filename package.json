@@ -1,0 +1,14 @@
+{
+  "name": "grandmas_encryption",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch" : "npx tailwindcss -i ./src/tailwindSource.css -o ./public/outputCss.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
