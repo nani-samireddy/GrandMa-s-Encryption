@@ -76,11 +76,11 @@
             <textarea
               placeholder="Type Secret Message here"
               name="grandmaInputCode"
-              id="grandmaInputcode"
+              id="messageInputTag"
               cols="30"
               rows="1"
               oninput="auto_grow(this)"
-              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 border-b-black border-solid outline-none focus:outline-none"
+              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 w-full border-b-black border-solid outline-none focus:outline-none"
             ></textarea>
           </div>
           <!--Output for the encrypt-->
@@ -91,7 +91,7 @@
             class="mt-10 w-full flex items-center justify-center font-poppins text-lg"
           >
             <button
-              id="EncrytpionButton"
+              id="EncryptionButton"
               class="rounded-lg px-9 py-3 bg-pale_silver font-medium"
             >
               Encrypt
@@ -117,16 +117,16 @@
             <textarea
               placeholder="Type Secret Code here"
               name="grandmaInputCode"
-              id="grandmaInputcode"
+              id="grandmaCodeInputTag"
               cols="30"
               rows="1"
               oninput="auto_grow(this)"
-              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 border-b-black border-solid outline-none focus:outline-none"
+              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 w-full border-b-black border-solid outline-none focus:outline-none"
             ></textarea>
           </div>
           <!--Output for the encrypt-->
           <div class="mt-12 flex items-center justify-start text-slate-400">
-            <p id="encryptedMessageCodeOutput">Secret Message will be here.</p>
+            <p id="decryptedMessageCodeOutput">Secret Message will be here.</p>
           </div>
           <div
             class="mt-10 w-full flex items-center justify-center font-poppins text-lg"
@@ -165,5 +165,6 @@
         element.style.height = element.scrollHeight + "px";
       }
     </script>
+    <script src="./public/script.js"></script>
   </body>
 </html>
