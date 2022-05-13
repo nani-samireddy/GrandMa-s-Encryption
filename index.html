@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="./public/outputCss.css" />
   </head>
   <body class="bg-vampire_black">
-
     <!-- HERO SECTION-->
     <section class="h-screen w-screen">
       <nav>
@@ -33,60 +32,127 @@
           Tool.
         </h2>
         <div class="w-screen flex items-center justify-center mt-16">
-          <button class="bg-white h-11 w-28 rounded-lg">Gets started</button>
+          <a
+            href="#Options"
+            class="bg-white h-11 w-28 rounded-lg text-center flex items-center justify-center"
+            >Gets started</a
+          >
         </div>
       </div>
     </section>
 
     <!--Selection section-->
     <section
+      id="Options"
       class="h-screen w-screen flex flex-col items-center justify-evenly font-poppins"
     >
       <div
         class="h-48 w-56 rounded-2xl text-center flex items-center justify-center bg-gradient-to-br from-bright_grey to-lemon_lime"
       >
-        <h1 class="text-4xl">Encrypt Message</h1>
+        <a href="#Encryption">
+          <h1 class="text-4xl">Encrypt Message</h1>
+        </a>
       </div>
       <div
         class="h-48 w-56 rounded-2xl text-center flex items-center justify-center bg-gradient-to-br from-bright_grey to-Interdimensional_Blue"
       >
-        <h1 class="text-4xl">Decrypt Message</h1>
+        <a href="#Decryption"> <h1 class="text-4xl">Decrypt Message</h1></a>
       </div>
     </section>
-    
+
     <!--Encrypt and Decrypt forms section-->
-    <section class="w-screen h-auto flex flex-col items-center gap-5">
+    <section class="w-screen h-auto flex flex-col items-center gap-y-52">
       <!--Encrypt section-->
-      <div class="bg-bright_grey w-4/5 h-auto p-5 rounded-3xl">
-        <div>
-          <h2 class="text-center text-4xl font-poppins font-bold">Encrypt</h2>
+      <div
+        id="Encryption"
+        class="w-screen min-h-screen flex items-center justify-center"
+      >
+        <div class="bg-bright_grey w-4/5 h-auto p-6 rounded-3xl">
+          <div>
+            <h2 class="text-center text-4xl font-poppins font-bold">Encrypt</h2>
+          </div>
+          <!--Input for the Encrypt-->
+          <div class="w-4/5 mt-10">
+            <textarea
+              placeholder="Type Secret Message here"
+              name="grandmaInputCode"
+              id="grandmaInputcode"
+              cols="30"
+              rows="1"
+              oninput="auto_grow(this)"
+              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 border-b-black border-solid outline-none focus:outline-none"
+            ></textarea>
+          </div>
+          <!--Output for the encrypt-->
+          <div class="mt-12 flex items-center justify-start text-slate-400">
+            <p id="encryptedMessageCodeOutput">Secret code will be here.</p>
+          </div>
+          <div
+            class="mt-10 w-full flex items-center justify-center font-poppins text-lg"
+          >
+            <button class="rounded-lg px-9 py-3 bg-pale_silver font-medium">
+              Encrypt
+            </button>
+          </div>
         </div>
-        <div class="w-4/5 mt-10">
-          <textarea
-            placeholder="Type Secret Message here"
-            name="grandmaInputCode"
-            id="grandmaInputcode"
-            cols="30"
-            rows="1"
-            oninput="auto_grow(this)"
-            class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 border-b-black border-solid outline-none focus:outline-none"
-          ></textarea>
-        </div>
-        <div class="mt-10 flex items-center justify-start">
-          <p id="encryptedMessageCodeOutput text-pale_silver">
-            Your Decrypted Message will be displayed here.
-          </p>
-        </div>
+      </div>
+
+      <!--Decryption section-->
+      <div
+        id="Decryption"
+        class="w-screen min-h-screen flex items-center justify-center"
+      >
         <div
-          class="mt-10 w-full flex items-center justify-center font-poppins text-lg"
+          id="Decryption"
+          class="bg-bright_grey w-4/5 h-auto p-6 rounded-3xl"
         >
-          <button class="rounded-lg px-9 py-3 bg-pale_silver font-medium">
-            Encrypt
-          </button>
+          <div>
+            <h2 class="text-center text-4xl font-poppins font-bold">Decrypt</h2>
+          </div>
+          <!--Input for the Decryption-->
+          <div class="w-4/5 mt-10">
+            <textarea
+              placeholder="Type Secret Code here"
+              name="grandmaInputCode"
+              id="grandmaInputcode"
+              cols="30"
+              rows="1"
+              oninput="auto_grow(this)"
+              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 border-b-black border-solid outline-none focus:outline-none"
+            ></textarea>
+          </div>
+          <!--Output for the encrypt-->
+          <div class="mt-12 flex items-center justify-start text-slate-400">
+            <p id="encryptedMessageCodeOutput">Secret Message will be here.</p>
+          </div>
+          <div
+            class="mt-10 w-full flex items-center justify-center font-poppins text-lg"
+          >
+            <button class="rounded-lg px-9 py-3 bg-pale_silver font-medium">
+              Encrypt
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
+    <!--How it Works Section-->
+    <section class="min-h-screen w-screen flex items-center justify-center">
+      <div>
+        <div>
+          <h2 class="text-white font-poppins font-bold text-4xl text-center">
+            How It Works?
+          </h2>
+        </div>
+        <div>
+          <p class="text-white text-xl font-inter text-center p-8">
+            This is a simple encryption tool that creates a secret code from
+            from a message and that can be again decrypted only in the Grandma
+            website.
+          </p>
+        </div>
+      </div>
+    </section>
     <script>
       function auto_grow(element) {
         element.style.height = "5px";
