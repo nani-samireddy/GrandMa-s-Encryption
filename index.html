@@ -85,7 +85,7 @@
           </div>
           <!--Output for the encrypt-->
           <div class="mt-12 flex items-center justify-start text-slate-400">
-            <p id="encryptedMessageCodeOutput">Secret code will be here.</p>
+            <p id="grandmaCodeOutputTag">Secret code will be here.</p>
           </div>
           <div
             class="mt-10 w-full flex items-center justify-center font-poppins text-lg"
@@ -95,6 +95,13 @@
               class="rounded-lg px-9 py-3 bg-pale_silver font-medium"
             >
               Encrypt
+            </button>
+            <!--COPY BUTTON-->
+             <button
+              id="CopyEncryptionButton"
+              class="rounded-lg px-9 py-3 bg-pale_silver font-medium hidden"
+            >
+              Copy
             </button>
           </div>
         </div>
@@ -126,7 +133,7 @@
           </div>
           <!--Output for the encrypt-->
           <div class="mt-12 flex items-center justify-start text-slate-400">
-            <p id="decryptedMessageCodeOutput">Secret Message will be here.</p>
+            <p id="messageOutputTag">Secret Message will be here.</p>
           </div>
           <div
             class="mt-10 w-full flex items-center justify-center font-poppins text-lg"
@@ -136,6 +143,13 @@
               class="rounded-lg px-9 py-3 bg-pale_silver font-medium"
             >
               Decrypt
+            </button>
+            <!--COPY BUTTON-->
+            <button
+              id="CopyDecryptionButton"
+              class="rounded-lg px-9 py-3 bg-pale_silver font-medium hidden"
+            >
+              Copy
             </button>
           </div>
         </div>
@@ -159,6 +173,7 @@
         </div>
       </div>
     </section>
+    <p id="dummy" class="hidden"></p>
     <script>
       function auto_grow(element) {
         element.style.height = "5px";
