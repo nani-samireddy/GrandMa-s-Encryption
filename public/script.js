@@ -1,5 +1,3 @@
-const encryptionButton = document.getElementById("EncryptionButton");
-const decryptionButton = document.getElementById("DecryptionButton");
 const copyButtonForEncryption = document.getElementById("CopyEncryptionButton");
 const copyButtonForDecryption = document.getElementById("CopyDecryptionButton");
 const messageInputTag = document.getElementById("messageInputTag");
@@ -8,18 +6,21 @@ const grandmaCodeInputTag = document.getElementById("grandmaCodeInputTag");
 const grandmaCodeOutputTag = document.getElementById("grandmaCodeOutputTag");
 
 //Event listeners
-encryptionButton.addEventListener("click", encryptAndEnableCopy);
+messageInputTag.addEventListener("input", (value) => {
+  encrypt();
+});
 
-decryptionButton.addEventListener("click", decryptAndEnableCopy);
+grandmaCodeInputTag.addEventListener("input", (value) => {
+  decrypt();
+});
 
 copyButtonForEncryption.addEventListener("click", () => {
   console.log("CopyButtonForEncryption pressed");
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(grandmaCodeOutputTag.innerText);
+  copyToClipboard(grandmaCodeOutputTag.innerText);
 });
 
 copyButtonForDecryption.addEventListener("click", () => {
-  console.log("CopyButtonForDecryption pressed");
+  copyToClipboard(messageOutputTag.innerText);
 });
 
 //functions
@@ -28,18 +29,22 @@ function encode(message) {
 }
 
 function decode(grandmaCode) {
-  return grandmaCode;
+  return grandmaCode.toString();
 }
 
-function encryptAndEnableCopy() {
+function encrypt() {
   let message = messageInputTag.value;
   message = message.toLowerCase();
   let grandMaCode = encode(message);
   grandmaCodeOutputTag.innerText = grandMaCode;
-
-  //changing the button
-  encryptionButton.classList.add("hidden");
-  copyButtonForEncryption.classList.remove("hidden");
 }
 
-function decryptAndEnableCopy() {}
+function decrypt() {
+  let grandMaCode = grandmaCodeInputTag.value;
+  let message = decode(grandMaCode);
+  messageOutputTag.innerText = message;
+}
+
+function copyToClipboard(value) {
+  navigator.clipboard.writeText(value);
+}
