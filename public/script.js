@@ -2,7 +2,6 @@ const encryptionButton = document.getElementById("EncryptionButton");
 const decryptionButton = document.getElementById("DecryptionButton");
 const copyButtonForEncryption = document.getElementById("CopyEncryptionButton");
 const copyButtonForDecryption = document.getElementById("CopyDecryptionButton");
-
 const messageInputTag = document.getElementById("messageInputTag");
 const messageOutputTag = document.getElementById("messageOutputTag");
 const grandmaCodeInputTag = document.getElementById("grandmaCodeInputTag");
@@ -15,6 +14,8 @@ decryptionButton.addEventListener("click", decryptAndEnableCopy);
 
 copyButtonForEncryption.addEventListener("click", () => {
   console.log("CopyButtonForEncryption pressed");
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(grandmaCodeOutputTag.innerText);
 });
 
 copyButtonForDecryption.addEventListener("click", () => {
@@ -35,6 +36,7 @@ function encryptAndEnableCopy() {
   message = message.toLowerCase();
   let grandMaCode = encode(message);
   grandmaCodeOutputTag.innerText = grandMaCode;
+
   //changing the button
   encryptionButton.classList.add("hidden");
   copyButtonForEncryption.classList.remove("hidden");
