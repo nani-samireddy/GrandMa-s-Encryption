@@ -24,13 +24,48 @@ copyButtonForDecryption.addEventListener("click", () => {
 });
 
 //functions
-function encode(message) {
-  return message.toString();
+function encode(inputString) {
+  let grandmaSecretCode="";
+  for(let i=0;i<inputString.length;i++)
+  {
+      let characterAscii=inputString.charCodeAt(i);
+      let grannyCode=characterAscii-96;
+      let letterCode="";
+      if(grannyCode==-64) 
+      {
+          letterCode=".0";
+      }
+      else
+      {
+          letterCode="."+grannyCode.toString();
+
+      }
+      grandmaSecretCode=grandmaSecretCode+letterCode; 
+  }
+  return grandmaSecretCode;
+}
+function decode(inputGrandmaCode)
+{
+  let decriptedMessage="";
+  let grannyCodes=inputGrandmaCode.split(".");
+  for(i=1;i<grannyCodes.length;i++)
+  {
+      let letterCode=Number(grannyCodes[i]); 
+      let character="";
+      if(letterCode==0)
+      {
+          character =" ";
+      }
+      else
+      {
+          let asciiValue=96+letterCode;
+          character=String.fromCharCode(asciiValue);
+      }
+      decriptedMessage=decriptedMessage+character;
+  }
+  return decriptedMessage;
 }
 
-function decode(grandmaCode) {
-  return grandmaCode.toString();
-}
 
 function encrypt() {
   let message = messageInputTag.value;
