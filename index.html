@@ -21,9 +21,9 @@
           GrandMa
         </h1>
       </nav>
-      <div class="mt-20">
+      <div class="mt-20 md:flex md:flex-col md:items-center w-screen h-full">
         <h2
-          class="text-white text-6xl text-pale_silver text-center leading-normal"
+          class="text-white text-6xl text-pale_silver text-center leading-normal md:text-7xl lg:text-9xl"
         >
           A simple
           <span class="font-poppins font-extrabold text-cinereous"
@@ -34,7 +34,7 @@
         <div class="w-screen flex items-center justify-center mt-16">
           <a
             href="#Options"
-            class="bg-white h-11 w-28 rounded-lg text-center flex items-center justify-center"
+            class="bg-white h-11 w-28 rounded-lg text-center flex items-center justify-center md:text-2xl md:w-36 md:h-12 md:p-2"
             >Gets started</a
           >
         </div>
@@ -44,17 +44,17 @@
     <!--Selection section-->
     <section
       id="Options"
-      class="h-screen w-screen flex flex-col items-center justify-evenly font-poppins"
+      class="h-screen w-screen flex flex-col lg:flex-row items-center justify-evenly font-poppins "
     >
       <div
-        class="h-48 w-56 rounded-2xl text-center flex items-center justify-center bg-gradient-to-br from-bright_grey to-lemon_lime"
+        class="h-48 w-56 rounded-2xl text-center flex items-center justify-center bg-gradient-to-br from-bright_grey to-lemon_lime md:h-56 md:w-64"
       >
         <a href="#Encryption">
           <h1 class="text-4xl">Encrypt Message</h1>
         </a>
       </div>
       <div
-        class="h-48 w-56 rounded-2xl text-center flex items-center justify-center bg-gradient-to-br from-bright_grey to-Interdimensional_Blue"
+        class="h-48 w-56 rounded-2xl text-center flex items-center justify-center bg-gradient-to-br from-bright_grey to-Interdimensional_Blue md:h-56 md:w-64"
       >
         <a href="#Decryption"> <h1 class="text-4xl">Decrypt Message</h1></a>
       </div>
@@ -67,12 +67,14 @@
         id="Encryption"
         class="w-screen min-h-screen flex items-center justify-center"
       >
-        <div class="bg-bright_grey w-4/5 h-auto p-6 rounded-3xl">
+        <div class="bg-bright_grey w-4/5 h-auto p-6 rounded-3xl md:w-2/3">
           <div>
-            <h2 class="text-center text-4xl font-poppins font-bold">Encrypt</h2>
+            <h2 class="text-center text-4xl font-poppins font-bold md:py-5">
+              Encrypt
+            </h2>
           </div>
           <!--Input for the Encrypt-->
-          <div class="w-4/5 mt-10">
+          <div class="w-4/5 mt-10 flex justify-center">
             <textarea
               placeholder="Type Secret Message here"
               name="messageInputTag"
@@ -80,15 +82,17 @@
               cols="30"
               rows="1"
               oninput="auto_grow(this)"
-              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 w-full border-b-black border-solid outline-none focus:outline-none"
+              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 w-full border-b-black border-solid outline-none focus:outline-none md:text-xl lg:w-3/4"
             ></textarea>
           </div>
           <!--Output for the encrypt-->
-          <div class="mt-12 flex items-center justify-start text-slate-400">
+          <div
+            class="mt-12 flex bg-slate-500 justify-center text-slate-400 md:text-xl lg:w-3/4"
+          >
             <p id="grandmaCodeOutputTag">Secret code will be here.</p>
           </div>
           <div
-            class="mt-10 w-full flex items-center justify-center font-poppins text-lg"
+            class="mt-10 w-full flex items-center justify-center font-poppins text-lg lg:py-12"
           >
             <!--COPY BUTTON-->
             <button
@@ -108,10 +112,12 @@
       >
         <div
           id="Decryption"
-          class="bg-bright_grey w-4/5 h-auto p-6 rounded-3xl"
+          class="bg-bright_grey w-4/5 h-auto p-6 rounded-3xl md:w-2/3"
         >
           <div>
-            <h2 class="text-center text-4xl font-poppins font-bold">Decrypt</h2>
+            <h2 class="text-center text-4xl font-poppins font-bold md:py-5">
+              Decrypt
+            </h2>
           </div>
           <!--Input for the Decryption-->
           <div class="w-4/5 mt-10">
@@ -122,11 +128,13 @@
               cols="30"
               rows="1"
               oninput="auto_grow(this)"
-              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 w-full border-b-black border-solid outline-none focus:outline-none"
+              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 w-full border-b-black border-solid outline-none focus:outline-none md:text-xl"
             ></textarea>
           </div>
           <!--Output for the encrypt-->
-          <div class="mt-12 flex items-center justify-start text-slate-400">
+          <div
+            class="mt-12 flex items-center justify-start text-slate-400 md:text-xl"
+          >
             <p id="messageOutputTag">Secret Message will be here.</p>
           </div>
           <div
@@ -152,8 +160,8 @@
             How It Works?
           </h2>
         </div>
-        <div>
-          <p class="text-white text-xl font-inter text-center p-8">
+        <div class="flex items-center justify-center">
+          <p class="text-white text-xl font-inter text-center p-8 md:w-2/3">
             This is a simple encryption tool that creates a secret code from
             from a message and that can be again decrypted only in the Grandma
             website.
@@ -161,7 +169,6 @@
         </div>
       </div>
     </section>
-    <p id="dummy" class="hidden"></p>
     <script>
       function auto_grow(element) {
         element.style.height = "5px";
