@@ -8,6 +8,7 @@ const grandmaCodeOutputTag = document.getElementById("grandmaCodeOutputTag");
 //Event listeners
 messageInputTag.addEventListener("input", (value) => {
   encrypt();
+  auto_grow(grandmaCodeOutputTag);
 });
 
 grandmaCodeInputTag.addEventListener("input", (value) => {
@@ -16,56 +17,45 @@ grandmaCodeInputTag.addEventListener("input", (value) => {
 
 copyButtonForEncryption.addEventListener("click", () => {
   console.log("CopyButtonForEncryption pressed");
-  copyToClipboard(grandmaCodeOutputTag.innerText);
+  copyToClipboard(grandmaCodeOutputTag.value);
 });
 
 copyButtonForDecryption.addEventListener("click", () => {
-  copyToClipboard(messageOutputTag.innerText);
+  copyToClipboard(messageOutputTag.value);
 });
 
 //functions
 function encode(inputString) {
-  let grandmaSecretCode="";
-  for(let i=0;i<inputString.length;i++)
-  {
-      let characterAscii=inputString.charCodeAt(i);
-      let grannyCode=characterAscii-96;
-      let letterCode="";
-      if(grannyCode==-64) 
-      {
-          letterCode=".0";
-      }
-      else
-      {
-          letterCode="."+grannyCode.toString();
-
-      }
-      grandmaSecretCode=grandmaSecretCode+letterCode; 
+  let grandmaSecretCode = "";
+  for (let i = 0; i < inputString.length; i++) {
+    let characterAscii = inputString.charCodeAt(i);
+    let grannyCode = characterAscii - 96;
+    let letterCode = "";
+    if (grannyCode == -64) {
+      letterCode = ".0";
+    } else {
+      letterCode = "." + grannyCode.toString();
+    }
+    grandmaSecretCode = grandmaSecretCode + letterCode;
   }
   return grandmaSecretCode;
 }
-function decode(inputGrandmaCode)
-{
-  let decriptedMessage="";
-  let grannyCodes=inputGrandmaCode.split(".");
-  for(i=1;i<grannyCodes.length;i++)
-  {
-      let letterCode=Number(grannyCodes[i]); 
-      let character="";
-      if(letterCode==0)
-      {
-          character =" ";
-      }
-      else
-      {
-          let asciiValue=96+letterCode;
-          character=String.fromCharCode(asciiValue);
-      }
-      decriptedMessage=decriptedMessage+character;
+function decode(inputGrandmaCode) {
+  let decriptedMessage = "";
+  let grannyCodes = inputGrandmaCode.split(".");
+  for (i = 1; i < grannyCodes.length; i++) {
+    let letterCode = Number(grannyCodes[i]);
+    let character = "";
+    if (letterCode == 0) {
+      character = " ";
+    } else {
+      let asciiValue = 96 + letterCode;
+      character = String.fromCharCode(asciiValue);
+    }
+    decriptedMessage = decriptedMessage + character;
   }
   return decriptedMessage;
 }
-
 
 function encrypt() {
   let message = messageInputTag.value;
@@ -82,4 +72,9 @@ function decrypt() {
 
 function copyToClipboard(value) {
   navigator.clipboard.writeText(value);
+}
+
+function auto_grow(element) {
+  element.style.height = "5px";
+  element.style.height = element.scrollHeight + "px";
 }

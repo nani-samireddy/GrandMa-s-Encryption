@@ -34,7 +34,7 @@
         <div class="w-screen flex items-center justify-center mt-16">
           <a
             href="#Options"
-            class="bg-white h-11 w-28 rounded-lg text-center flex items-center justify-center md:text-2xl md:w-36 md:h-12 md:p-2"
+            class="bg-white h-11 w-28 rounded-lg text-center flex items-center justify-center md:text-2xl md:w-36 md:h-12 md:p-2 lg:p-4 lg:w-52"
             >Gets started</a
           >
         </div>
@@ -44,7 +44,7 @@
     <!--Selection section-->
     <section
       id="Options"
-      class="h-screen w-screen flex flex-col lg:flex-row items-center justify-evenly font-poppins "
+      class="h-screen w-screen flex flex-col lg:flex-row items-center justify-evenly font-poppins"
     >
       <div
         class="h-48 w-56 rounded-2xl text-center flex items-center justify-center bg-gradient-to-br from-bright_grey to-lemon_lime md:h-56 md:w-64"
@@ -74,7 +74,7 @@
             </h2>
           </div>
           <!--Input for the Encrypt-->
-          <div class="w-4/5 mt-10 flex justify-center">
+          <div class="w-full mt-10 flex justify-center">
             <textarea
               placeholder="Type Secret Message here"
               name="messageInputTag"
@@ -82,17 +82,25 @@
               cols="30"
               rows="1"
               oninput="auto_grow(this)"
-              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 w-full border-b-black border-solid outline-none focus:outline-none md:text-xl lg:w-3/4"
+              class="bg-bright_grey resize-none overflow-hidden min-h-min border-b-black border-solid outline-none focus:outline-none md:text-xl w-4/5 lg:w-3/4"
             ></textarea>
           </div>
           <!--Output for the encrypt-->
-          <div
-            class="mt-12 flex bg-slate-500 justify-center text-slate-400 md:text-xl lg:w-3/4"
-          >
-            <p id="grandmaCodeOutputTag">Secret code will be here.</p>
+          <div class="w-full mt-10 flex justify-center">
+            <textarea
+              placeholder="Secret code will be here."
+              name="grandmaCodeOutputTag"
+              id="grandmaCodeOutputTag"
+              cols="30"
+              rows="1"
+              oninput="auto_grow(this)"
+              disabled
+              class="bg-bright_grey resize-none overflow-hidden min-h-min border-b-black border-solid outline-none focus:outline-none md:text-xl w-4/5 lg:w-3/4"
+            ></textarea>
           </div>
+
           <div
-            class="mt-10 w-full flex items-center justify-center font-poppins text-lg lg:py-12"
+            class="mt-10 w-full flex items-center justify-center font-poppins text-lg lg:py-8"
           >
             <!--COPY BUTTON-->
             <button
@@ -120,7 +128,7 @@
             </h2>
           </div>
           <!--Input for the Decryption-->
-          <div class="w-4/5 mt-10">
+          <div class="w-full mt-10 flex justify-center">
             <textarea
               placeholder="Type Secret Code here"
               name="grandmaInputCode"
@@ -128,17 +136,25 @@
               cols="30"
               rows="1"
               oninput="auto_grow(this)"
-              class="bg-bright_grey resize-none overflow-hidden min-h-min max-h-28 w-full border-b-black border-solid outline-none focus:outline-none md:text-xl"
+              class="bg-bright_grey resize-none overflow-hidden min-h-min border-b-black border-solid outline-none focus:outline-none md:text-xl w-4/5 lg:w-3/4"
             ></textarea>
           </div>
           <!--Output for the encrypt-->
-          <div
-            class="mt-12 flex items-center justify-start text-slate-400 md:text-xl"
-          >
-            <p id="messageOutputTag">Secret Message will be here.</p>
+          <div class="w-full mt-10 flex justify-center">
+            <textarea
+              placeholder="Secret Message will be here."
+              name="messageOutputTag"
+              id="messageOutputTag"
+              cols="30"
+              rows="1"
+              oninput="auto_grow(this)"
+              disabled
+              class="bg-bright_grey resize-none overflow-hidden min-h-min border-b-black border-solid outline-none focus:outline-none md:text-xl w-4/5 lg:w-3/4"
+            ></textarea>
           </div>
+
           <div
-            class="mt-10 w-full flex items-center justify-center font-poppins text-lg"
+            class="mt-10 w-full flex items-center justify-center font-poppins text-lg lg:py-8"
           >
             <!--COPY BUTTON-->
             <button
@@ -169,12 +185,7 @@
         </div>
       </div>
     </section>
-    <script>
-      function auto_grow(element) {
-        element.style.height = "5px";
-        element.style.height = element.scrollHeight + "px";
-      }
-    </script>
+
     <script src="./public/script.js"></script>
   </body>
 </html>
