@@ -9,19 +9,26 @@ const grandmaCodeOutputTag = document.getElementById("grandmaCodeOutputTag");
 messageInputTag.addEventListener("input", (value) => {
   encrypt();
   auto_grow(grandmaCodeOutputTag);
+
+  copyButtonForEncryption.innerText = "Copy";
 });
 
 grandmaCodeInputTag.addEventListener("input", (value) => {
   decrypt();
+  auto_grow(grandmaCodeOutputTag);
+
+  copyButtonForDecryption.innerText = "Copy";
 });
 
 copyButtonForEncryption.addEventListener("click", () => {
   console.log("CopyButtonForEncryption pressed");
   copyToClipboard(grandmaCodeOutputTag.value);
+  copyButtonForEncryption.innerText = "Copied";
 });
 
 copyButtonForDecryption.addEventListener("click", () => {
   copyToClipboard(messageOutputTag.value);
+  copyButtonForDecryption.innerText = "Copied";
 });
 
 //functions

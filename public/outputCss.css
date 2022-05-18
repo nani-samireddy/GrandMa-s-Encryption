@@ -480,10 +480,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 2.5rem;
 }
 
-.mt-12 {
-  margin-top: 3rem;
-}
-
 .flex {
   display: flex;
 }
@@ -506,10 +502,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-auto {
   height: auto;
-}
-
-.max-h-28 {
-  max-height: 7rem;
 }
 
 .min-h-screen {
@@ -542,18 +534,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
-.w-4 {
-  width: 1rem;
-}
-
-.w-1 {
-  width: 0.25rem;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
 .resize-none {
   resize: none;
 }
@@ -564,10 +544,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .items-center {
   align-items: center;
-}
-
-.justify-start {
-  justify-content: flex-start;
 }
 
 .justify-center {
@@ -624,18 +600,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgba(237, 236, 236, 1);
 }
 
-.bg-slate-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
-}
-
 .bg-pale_silver {
   background-color: rgba(197, 190, 180, 1);
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-br {
@@ -679,10 +645,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pl-6 {
   padding-left: 1.5rem;
-}
-
-.text-left {
-  text-align: left;
 }
 
 .text-center {
@@ -749,11 +711,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-cinereous {
   color: rgba(156, 137, 123, 1);
-}
-
-.text-slate-400 {
-  --tw-text-opacity: 1;
-  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 .outline-none {
@@ -825,32 +782,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1024px) {
-  .lg\:w-3\/4 {
-    width: 75%;
-  }
-
-  .lg\:w-3 {
-    width: 0.75rem;
-  }
-
-  .lg\:w-32 {
-    width: 8rem;
-  }
-
-  .lg\:w-36 {
-    width: 9rem;
-  }
-
-  .lg\:w-5 {
-    width: 1.25rem;
-  }
-
-  .lg\:w-56 {
-    width: 14rem;
-  }
-
   .lg\:w-52 {
     width: 13rem;
+  }
+
+  .lg\:w-3\/4 {
+    width: 75%;
   }
 
   .lg\:flex-row {
@@ -859,11 +796,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:p-4 {
     padding: 1rem;
-  }
-
-  .lg\:py-12 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
   }
 
   .lg\:py-8 {
