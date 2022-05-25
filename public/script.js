@@ -60,6 +60,7 @@ function decode(inputGrandmaCode) {
       character = String.fromCharCode(asciiValue);
     }
     decriptedMessage = decriptedMessage + character;
+    console.log(letterCode + " : " + character);
   }
   return decriptedMessage;
 }
@@ -73,6 +74,7 @@ function encrypt() {
 
 function decrypt() {
   let grandMaCode = grandmaCodeInputTag.value;
+  console.log(grandMaCode);
   let message = decode(grandMaCode);
   messageOutputTag.innerText = message;
 }
