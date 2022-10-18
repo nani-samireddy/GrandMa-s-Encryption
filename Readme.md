@@ -1,1 +1,2 @@
-#Grandma project
+# Grandma project
+Grandma uses binary algorithm to encrypt and decrypt messages...
